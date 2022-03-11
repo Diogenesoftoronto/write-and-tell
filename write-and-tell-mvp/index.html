@@ -15454,17 +15454,17 @@
 
       function addElementToNode(text, className) {
         // create a new div element
-        const newParagraph = document.createElement("p");
+        const newParagraph = `<p>${text}</p>`;
 
-        // and give it some content
-        const newContent = document.createTextNode(text + "\n");
+        // // and give it some content
+        // const newContent = document.createTextNode(text + "\n");
 
-        // add the text node to the newly created div
-        newParagraph.appendChild(newContent);
+        // // add the text node to the newly created div
+        // newParagraph.appendChild(newContent);
 
         // add the newly created element and its content into the DOM
         const currentDiv = document.getElementsByClassName(className);
-        currentDiv.innerHTML = newParagraph;
+        currentDiv.innerHTML += newParagraph;
       }
 
       function getWritingPrompt() {
