@@ -15436,15 +15436,15 @@
       const simplePromptRegEx = /\[SP\]\s.+/g;
       const establishedPromptRegEx = /\[EU\]\s.+/g;
 
-      const getAllWritingPrompt = titleData.map((element) =>
+      const getAllWritingPrompt = titleData.filter((element) =>
         element.match(writingPromptRegEx)
       );
 
-      const getAllSimplePrompt = titleData.map((element) =>
+      const getAllSimplePrompt = titleData.filter((element) =>
         element.match(simplePromptRegEx)
       );
       // console.log(getAllWritingPrompt);
-      const getAllEstablishedUniversePrompt = titleData.map((element) =>
+      const getAllEstablishedUniversePrompt = titleData.filter((element) =>
         element.match(establishedPromptRegEx)
       );
 
@@ -15468,7 +15468,7 @@
       }
 
       function getWritingPrompt() {
-        const randInt = getRandomInt(getAllWritingPrompt.length);
+        const randInt = getRandomInt(getAllWritingPrompt.length - 1);
         const randPrompt = getAllWritingPrompt[randInt];
         addElementToNode(randPrompt, "card--prompt");
         console.log(randPrompt);
@@ -15476,19 +15476,21 @@
         // return randPrompt;
       }
       function getSimplePrompt() {
-        const randInt = getRandomInt(getAllSimplePrompt.length);
+        const randInt = getRandomInt(getAllSimplePrompt.length - 1);
         const randPrompt = getAllSimplePrompt[randInt];
         addElementToNode(randPrompt, "card--prompt");
-        console.log(getAllSimplePrompt);
+        // console.log(getAllSimplePrompt);
         console.log(randPrompt);
 
         // return randPrompt;
       }
       function getEstablishedUniversePrompt() {
-        const randInt = getRandomInt(getAllEstablishedUniversePrompt.length);
+        const randInt = getRandomInt(
+          getAllEstablishedUniversePrompt.length - 1
+        );
         const randPrompt = getAllEstablishedUniversePrompt[randInt];
         addElementToNode(randPrompt, "card--prompt");
-        // console.log(randPrompt);
+        console.log(randPrompt);
         // return randPrompt;
       }
     </script>
