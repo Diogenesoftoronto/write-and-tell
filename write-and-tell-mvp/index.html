@@ -15432,9 +15432,9 @@
 
       const authorData = parsedData.map((element) => element.data.author);
 
-      const writingPromptRegEx = /\[WP\]\s(.+)/g;
-      const simplePromptRegEx = /\[SP\]\s(.+)/g;
-      const establishedPromptRegEx = /\[EU\]\s(.+)/g;
+      const writingPromptRegEx = /\[WP\]\s.+/g;
+      const simplePromptRegEx = /\[SP\]\s.+/g;
+      const establishedPromptRegEx = /\[EU\]\s.+/g;
 
       const getAllWritingPrompt = titleData.map((element) =>
         element.match(writingPromptRegEx)
@@ -15471,16 +15471,16 @@
         const randInt = getRandomInt(getAllWritingPrompt.length);
         const randPrompt = getAllWritingPrompt[randInt];
         addElementToNode(randPrompt, "card--prompt");
-        // console.log(randPrompt);
-        console.log(titleData);
+        console.log(randPrompt);
+        // console.log(titleData);
         // return randPrompt;
       }
       function getSimplePrompt() {
         const randInt = getRandomInt(getAllSimplePrompt.length);
         const randPrompt = getAllSimplePrompt[randInt];
         addElementToNode(randPrompt, "card--prompt");
-        // console.log(getAllSimplePrompt)
-        // console.log(randPrompt);
+        console.log(getAllSimplePrompt);
+        console.log(randPrompt);
 
         // return randPrompt;
       }
