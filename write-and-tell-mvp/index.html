@@ -15467,26 +15467,26 @@
         currentDiv.append(newParagraph);
       }
 
-      const getWritingPrompt = () => {
+      function getWritingPrompt() {
         const randInt = getRandomInt(getAllWritingPrompt.length);
         const randPrompt = getAllWritingPrompt[randInt];
         addElementToNode(randPrompt, "card--prompt");
         // return randPrompt;
-      };
-      const getSimplePrompt = () => {
+      }
+      function getSimplePrompt() {
         const randInt = getRandomInt(getAllSimplePrompt.length);
         const randPrompt = getAllSimplePrompt[randInt];
         addElementToNode(randPrompt, "card--prompt");
 
         // return randPrompt;
-      };
-      const getEstablishedUniversePrompt = () => {
+      }
+      function getEstablishedUniversePrompt() {
         const randInt = getRandomInt(getAllEstablishedUniversePrompt.length);
         const randPrompt = getAllEstablishedUniversePrompt[randInt];
         addElementToNode(randPrompt, "card--prompt");
 
         // return randPrompt;
-      };
+      }
     </script>
 
     <style src="base.css"></style>
