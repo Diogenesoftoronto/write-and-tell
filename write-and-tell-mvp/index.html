@@ -15500,14 +15500,25 @@
       }
     </script>
 
-    <style src="base.css"></style>
+    <style>
+      body {
+        display: grid;
+        gap: 1rem;
+        grid-template-rows: repeat(3, 1fr);
+      }
+
+      .header {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+      }
+    </style>
   </head>
   <body>
-    <section class="header"></section>
+    <section class="header"><h1>Write & Tell</h1></section>
     <section class="main">
       <div class="card--hero">
         <!-- <img src="public/" /> -->
-        <h1>Write & Tell</h1>
       </div>
       <div class="card--main">
         <button class="Button--Primary" onclick="getWritingPrompt()">
