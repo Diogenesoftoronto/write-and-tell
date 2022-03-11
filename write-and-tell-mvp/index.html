@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Write&Tell</title>
-  <script src=""></script>
-</head>
-<body>
-  <h1>Write&Tell</h1>
-  <button onclick="">Get Prompt</button>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Write&Tell</title>
+    <script src="./src"></script>
+    <style src="base.css"></style>
+  </head>
+  <body>
+    <section class="header"></section>
+    <section class="main">
+      <div class="card--hero">
+        <img src="public/" />
+        <h1>Write & Tell</h1>
+      </div>
+      <div class="card--main">
+        <button class="Button--Primary" onclick="getWritingPrompt()">
+          Get Prompt
+        </button>
+        <button class="Button--Primary" onclick="getSimplePrompt()">
+          Get Simple Prompt
+        </button>
+        <button
+          class="Button--Primary"
+          onclick="getEstablishedUniversePrompt()"
+        >
+          Get Established Universe Prompt
+        </button>
+      </div>
+      <div class="card--prompt"></div>
+    </section>
+    <section class="footer">
+      <p>
+        Made using the <a src="http://vanilla-js.com/">vanilla-js</a> framework
+      </p>
+    </section>
+  </body>
 </html>
