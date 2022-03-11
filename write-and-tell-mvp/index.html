@@ -15465,13 +15465,17 @@
         // add the newly created element and its content into the DOM
         const currentDiv = document.getElementsByClassName(className);
         currentDiv.innerHTML += newParagraph;
+        console.log(currentDiv);
       }
 
       function getWritingPrompt() {
         const randInt = getRandomInt(getAllWritingPrompt.length - 1);
         const randPrompt = getAllWritingPrompt[randInt];
-        addElementToNode(randPrompt, "card--prompt");
-        console.log(randPrompt);
+        // addElementToNode(randPrompt, "card--prompt");
+        const newParagraph = `<p>${randPrompt}</p>`;
+        const currentDiv = document.getElementsByClassName("card--prompt");
+        currentDiv.innerHTML += newParagraph;
+        // console.log(randPrompt);
         // console.log(titleData);
         // return randPrompt;
       }
@@ -15480,7 +15484,7 @@
         const randPrompt = getAllSimplePrompt[randInt];
         addElementToNode(randPrompt, "card--prompt");
         // console.log(getAllSimplePrompt);
-        console.log(randPrompt);
+        // console.log(randPrompt);
 
         // return randPrompt;
       }
@@ -15490,7 +15494,7 @@
         );
         const randPrompt = getAllEstablishedUniversePrompt[randInt];
         addElementToNode(randPrompt, "card--prompt");
-        console.log(randPrompt);
+        // console.log(randPrompt);
         // return randPrompt;
       }
     </script>
