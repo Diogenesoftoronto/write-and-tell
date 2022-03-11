@@ -15463,18 +15463,19 @@
         // newParagraph.appendChild(newContent);
 
         // add the newly created element and its content into the DOM
-        const currentDiv = document.getElementsByClassName(className);
-        currentDiv.innerHTML += newParagraph;
+        const currentDiv = document.getElementById(className);
+        currentDiv.innerHTML = newParagraph;
+        
         console.log(currentDiv);
       }
 
       function getWritingPrompt() {
         const randInt = getRandomInt(getAllWritingPrompt.length - 1);
         const randPrompt = getAllWritingPrompt[randInt];
-        // addElementToNode(randPrompt, "card--prompt");
-        const newParagraph = `<p>${randPrompt}</p>`;
-        const currentDiv = document.getElementsByClassName("card--prompt");
-        currentDiv.innerHTML += newParagraph;
+        addElementToNode(randPrompt, "card--prompt");
+        // const newParagraph = `<p>${randPrompt}</p>`;
+        // const currentDiv = document.getElementsByClassName("card--prompt");
+        // currentDiv.innerHTML = newParagraph;
         // console.log(randPrompt);
         // console.log(titleData);
         // return randPrompt;
@@ -15505,7 +15506,7 @@
     <section class="header"></section>
     <section class="main">
       <div class="card--hero">
-        <img src="public/" />
+        <!-- <img src="public/" /> -->
         <h1>Write & Tell</h1>
       </div>
       <div class="card--main">
@@ -15522,7 +15523,10 @@
           Get Established Universe Prompt
         </button>
       </div>
-      <div class="card--prompt"></div>
+      <div id="card--prompt">
+      <p>
+      </p>
+    </div>
     </section>
     <section class="footer">
       <p>
