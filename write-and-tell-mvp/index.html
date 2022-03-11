@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Write&Tell</title>
-    <script type="module">
+    <script>
       // import fs from 'fs';
       // const fs = require("fs");
       // fs.readFileSync("../reddit-data.txt");
@@ -15464,7 +15464,7 @@
 
         // add the newly created element and its content into the DOM
         const currentDiv = document.getElementsByClassName(className);
-        currentDiv.append(newParagraph);
+        currentDiv.innerHTML = newParagraph;
       }
 
       function getWritingPrompt() {
