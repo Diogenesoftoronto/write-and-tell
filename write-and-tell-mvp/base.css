@@ -1,0 +1,7 @@
+/* layout css*/
+
+body {
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: repeat(3, 1fr);
+}
