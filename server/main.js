@@ -8,4 +8,4 @@ function apilisten () {
 }
 e.get('/', apicall)
 
-e.listen(8080, apilisten)
+e.listen(8080)
