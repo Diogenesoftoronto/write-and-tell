@@ -1,0 +1,55 @@
+type Answer {
+	id: ID!
+	content: String!
+	created: AWSTimestamp!
+}
+
+type Mutation {
+	createPrompt(userContent: UserInfo!, promptContent: PromptInfo): Prompt
+}
+
+type Prompt {
+	id: ID!
+	content: String!
+	created: AWSTimestamp!
+	answers: [Answer]
+	type: PromptType!
+}
+
+input PromptInfo {
+	id: ID!
+	created: AWSTimestamp!
+	content: String!
+	type: PromptType!
+}
+
+enum PromptType {
+	OTHER
+	SIMPLE
+	ESTABLISHED
+	DEFAULT
+}
+
+type Query {
+	prompt: [Prompt]
+	user: [User]
+	answer: [Answer]
+}
+
+type User {
+	id: ID!
+	name: String
+	email: String
+	password: String!
+	bio: String
+	avatar: String
+	created: AWSTimestamp
+	answers: [Answer]
+	prompts: [Prompt]
+}
+
+input UserInfo {
+	id: ID!
+	name: String
+	email: String
+}
