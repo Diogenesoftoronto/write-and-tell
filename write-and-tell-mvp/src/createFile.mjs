@@ -16,21 +16,54 @@ const establishedPromptRegEx = /\[EU\]\s.+/g;
 
 export const getAllWritingPrompt = titleData.filter((element) =>
   element.match(writingPromptRegEx)
-);
+).map((element) => {
+    // replace the [WP] with nothing
+    element = element.replace(/\[WP\]/g, '');
+    return {"Content": element, 
+    "Type": "DEFAULT", 
+    "Author": "NONE", 
+    "Created": "NONE", 
+    };
+});
 
 export const getAllSimplePrompt = titleData.filter((element) =>
   element.match(simplePromptRegEx)
-);
+).map((element) => {
+  // replace the [WP] with nothing
+  element = element.replace(/\[SP\]/g, '');
+  return {"Content": element, 
+  "Type": "SIMPLE", 
+  "Author": "NONE", 
+  "Created": "NONE", 
+  "Answers": [],
+    "engagement": {
+      "rating": 0,
+      "views": 0,
+      "age": 0,
+    }};
+});;
 
 export const getAllEstablishedUniversePrompt = titleData.filter((element) =>
   element.match(establishedPromptRegEx)
-);
+).map((element) => {
+  // replace the [WP] with nothing
+  element = element.replace(/\[EU\]/g, '');
+  return {"Content": element, 
+  "Type": "ESTABLISHED", 
+  "Author": "NONE", 
+  "Created": "NONE", 
+  "Answers": [],
+    "engagement": {
+      "rating": 0,
+      "views": 0,
+      "age": 0,
+    }};
+});;
 
-console.log({getAllWritingPrompt});
 // write the output of getAllWritingPrompt to a file
-const writingPrompts = JSON.stringify(getAllWritingPrompt);
-const simplePrompts = JSON.stringify(getAllSimplePrompt);
-const establishedUniversePrompts = JSON.stringify(getAllEstablishedUniversePrompt);
+const writingPrompts = JSON.stringify(getAllWritingPrompt, null, 4);
+const simplePrompts = JSON.stringify(getAllSimplePrompt, null, 4);
+const establishedUniversePrompts = JSON.stringify(getAllEstablishedUniversePrompt, null, 4);
 
 
 const writingPromptsFile = fs.writeFileSync("./writing-prompts.txt", writingPrompts, {flag: "w+"});
