@@ -8,7 +8,7 @@ const fs = require("fs");
   };
   // console.log(redditScraperOptions)
   const requestOptions = {
-    Pages: 5,
+    Pages: 25,
     Records: 25,
     SubReddit: "writingprompts",
     SortType: "hot",
