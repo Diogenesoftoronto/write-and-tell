@@ -1,5 +1,5 @@
 // import fs from 'fs/promises';
-const fs = require("fs");
+import fs from 'fs';
 const data = fs.readFileSync("../reddit-data.txt");
 const parsedData = JSON.parse(data);
 
@@ -13,15 +13,15 @@ const writingPromptRegEx = /\[WP\](\w+)/g;
 const simplePromptRegEx = /\[SP\](\w+)/g;
 const establishedPromptRegEx = /\[EU\](\w+)/g;
 
-const getAllWritingPrompt = titleData.map((element) =>
+export const getAllWritingPrompt = titleData.map((element) =>
   element.match(writingPromptRegEx)
 );
 
-const getAllSimplePrompt = titleData.map((element) =>
+export const getAllSimplePrompt = titleData.map((element) =>
   element.match(simplePromptRegEx)
 );
 
-const getAllEstablishedUniversePrompt = titleData.map((element) =>
+export const getAllEstablishedUniversePrompt = titleData.map((element) =>
   element.match(establishedPromptRegEx)
 );
 
@@ -44,20 +44,20 @@ function addElementToNode(text, className) {
   currentDiv.append(newParagraph);
 }
 
-const getWritingPrompt = () => {
+export const getWritingPrompt = () => {
   const randInt = getRandomInt(getAllWritingPrompt.length);
   const randPrompt = getAllWritingPrompt[randInt];
   addElementToNode(randPrompt, "card--prompt");
   // return randPrompt;
 };
-const getSimplePrompt = () => {
+export const getSimplePrompt = () => {
   const randInt = getRandomInt(getAllSimplePrompt.length);
   const randPrompt = getAllSimplePrompt[randInt];
   addElementToNode(randPrompt, "card--prompt");
 
   // return randPrompt;
 };
-const getEstablishedUniversePrompt = () => {
+export const getEstablishedUniversePrompt = () => {
   const randInt = getRandomInt(getAllEstablishedUniversePrompt.length);
   const randPrompt = getAllEstablishedUniversePrompt[randInt];
   addElementToNode(randPrompt, "card--prompt");
@@ -65,4 +65,4 @@ const getEstablishedUniversePrompt = () => {
   // return randPrompt;
 };
 
-module.exports = { getEstablishedUniversePrompt, getSimplePrompt, getWritingPrompt };
+// module.exports = { getEstablishedUniversePrompt, getSimplePrompt, getWritingPrompt };
