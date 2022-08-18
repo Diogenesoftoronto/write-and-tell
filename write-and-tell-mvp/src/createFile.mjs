@@ -23,7 +23,12 @@ export const getAllWritingPrompt = titleData.filter((element) =>
     "Type": "DEFAULT", 
     "Author": "NONE", 
     "Created": "NONE", 
-    };
+    "Answers": [],
+    "Engagment": {
+      "rating": 0,
+      "views": 0,
+      "age": 0,
+    }};
 });
 
 export const getAllSimplePrompt = titleData.filter((element) =>
@@ -36,7 +41,7 @@ export const getAllSimplePrompt = titleData.filter((element) =>
   "Author": "NONE", 
   "Created": "NONE", 
   "Answers": [],
-    "engagement": {
+    "Engagment": {
       "rating": 0,
       "views": 0,
       "age": 0,
@@ -53,7 +58,7 @@ export const getAllEstablishedUniversePrompt = titleData.filter((element) =>
   "Author": "NONE", 
   "Created": "NONE", 
   "Answers": [],
-    "engagement": {
+    "Engagment": {
       "rating": 0,
       "views": 0,
       "age": 0,
